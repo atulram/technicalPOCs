@@ -34,7 +34,7 @@ Authentication Methods
 
         Token-Based Authentication allows users to enter their credentials only once and obtain a one-of-a-kind encrypted string exchange in return. After that, you won’t have to input your credentials every time you want to log in or acquire access. The digital token ensures that you have already been granted access. Most use cases, such as Restful APIs that are accessed by many frameworks and clients, require token-based authentication.
     
-- Single Sign-On Authentication (SSO
+- Single Sign-On Authentication (SSO)
 
         Single Sign-On is a subset of basic username-password-based Authentication. Going with SSO authentication will provide advanced security and multiple features with frictionless experience to your end-users. Single Sign-On as the name depicts allows individuals to enter their username and password once and get access to all configured applications. Simply stating you will have the provision to configure “N no apps”
 
@@ -49,4 +49,20 @@ Authentication Methods
 
 
 
+Authorization Methods
+- Discretionary Access Control (DAC)‍
+        
+        DAC determines privileges depending on the specific user and their access groups. A DAC model allows every object in a system to be accessed by a particular group or identity. Those in charge of granting authorization can provide admin permission to other users.
+- Mandatory Access Control (MAC)
+        
+        MAC determines authorization of entities at the operating system level. MAC commonly governs permissions for threads and processes, defining which files and memory objects they can access. 
+- Role-Based Access Control (RBAC)
+        
+        RBAC is used to enforce access controls defined in the DAC or MAC model. RBAC builds on predefined roles and privileges, assigns users to roles, and configures a system so that only specific roles can access each object.
+- Attribute-based Access Control (ABAC)
+       
+        ABAC is used to enforce access controls in a policy-based manner. It uses attributes, which can be attached to a user, a resource, an object, or an entire environment. An entity is authorized if the authentication system finds that all the attributes defined in the policy are true.
 
+[Source1 this website](https://frontegg.com/blog/authentication-vs-authorization)
+
+[Source1 this website](https://frontegg.com/blog/token-based-authentication)
