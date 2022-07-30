@@ -1,4 +1,6 @@
 Authentication Methods
+
+[Source this website](https://www.pingidentity.com/en/resources/blog/post/the-top-6-authentication-mechanisms.html)
  - Passwords
  
         A password is a shared secret known by the user and presented to the server to authenticate the user
@@ -16,4 +18,35 @@ Authentication Methods
 
         Device identification establishes a fingerprint that's somewhat unique to that device. Over time, this fingerprint allows the authentication server to recognize that device and determine when the user associated with it attempts to authenticate from a different device, which could indicate fraudulent activity
 
-[Source this website](https://www.pingidentity.com/en/resources/blog/post/the-top-6-authentication-mechanisms.html)
+[Source1 this website](https://blog.miniorange.com/different-types-of-authentication-methods-for-security/)
+
+[Source1 this website](https://www.educba.com/authorization-types/)
+
+- Multi-Factor Authentication
+
+        Multi-Factor Authentication (MFA) is an authentication method in which an individual must pass multiple factors in order to gain access to a service or network. It’s an extra layer of security on top of the standard password-based login. Individuals must also submit a second factor in the form of a one-time code that they will receive through phone or email in addition to their Username and Password.
+    
+- Certificate-based authentication
+
+        A certificate is made up of a user’s digital identity, which contains a public key and a certification authority’s digital signature. This certificate verifies that the public key and the person who issued the certificate are both the same person. When a user attempts to log in to a server, they must first present their digital certificate
+
+- Token-Based Authentication
+
+        Token-Based Authentication allows users to enter their credentials only once and obtain a one-of-a-kind encrypted string exchange in return. After that, you won’t have to input your credentials every time you want to log in or acquire access. The digital token ensures that you have already been granted access. Most use cases, such as Restful APIs that are accessed by many frameworks and clients, require token-based authentication.
+    
+- Single Sign-On Authentication (SSO
+
+        Single Sign-On is a subset of basic username-password-based Authentication. Going with SSO authentication will provide advanced security and multiple features with frictionless experience to your end-users. Single Sign-On as the name depicts allows individuals to enter their username and password once and get access to all configured applications. Simply stating you will have the provision to configure “N no apps”
+
+- API Passwords
+
+         An API key is a unique identifier for web service requests that identifies their source (or similar types of requests).When a user attempts to get allowed access to a system for the first time through registration, a key is produced.Following that, the API key is paired with a secret token and is submitted with subsequent queries.When a user tries to re-enter the system, their unique key is used to verify that they are the same person who used the system previously.
+        
+- OAuth
+
+        OAuth is a popular API authentication technique that allows for both authentication and authorization.OAuth allows the API to authenticate and access the system or resource requested by establishing scope.
+
+
+
+
+
