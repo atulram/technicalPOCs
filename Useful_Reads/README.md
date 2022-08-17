@@ -10,3 +10,11 @@ We use a process manager which manages the node process when running in producti
 We need to place the static files to a specifed location
 - [Link 1](https://arjunphp.com/deploy-angular-app-production-nginx/)
 - [Link 2](https://balramchavan.medium.com/deploy-angular-application-in-nginx-server-on-digitalocean-ubuntu-droplet-28380524811e)
+
+
+**Connect NodeJS app to a database with and without ORM**
+
+For postgres
+
+- [Without ORM](https://dev.to/miku86/nodejs-postgresql-how-to-connect-our-database-to-our-simple-express-server-without-an-orm-10o0)
+- [With ORM](https://dev.to/miku86/nodejs-postgresql-how-to-connect-our-database-to-our-simple-express-server-with-an-orm-gcm)
