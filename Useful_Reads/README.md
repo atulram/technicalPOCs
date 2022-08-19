@@ -20,7 +20,8 @@ For postgres
 - [With ORM](https://dev.to/miku86/nodejs-postgresql-how-to-connect-our-database-to-our-simple-express-server-with-an-orm-gcm)
 
 **TCP and sockets**
-
+- [What is a socket](https://www.howtogeek.com/devops/what-are-unix-sockets-and-how-do-they-work/)
+- [Understanding socket with socat utility](https://www.digitalocean.com/community/tutorials/understanding-sockets)
 - [Source port allocation to establish a TCP/IP connection](https://idea.popcount.org/2014-04-03-bind-before-connect/)
 - [Sockets in a Bind](https://blog.heroku.com/sockets-in-a-bind)
 - [Details on the socket queues](https://blog.cloudflare.com/syn-packet-handling-in-the-wild/)
