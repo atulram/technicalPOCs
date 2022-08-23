@@ -25,3 +25,8 @@ For postgres
 - [Source port allocation to establish a TCP/IP connection](https://idea.popcount.org/2014-04-03-bind-before-connect/)
 - [Sockets in a Bind](https://blog.heroku.com/sockets-in-a-bind)
 - [Details on the socket queues](https://blog.cloudflare.com/syn-packet-handling-in-the-wild/)
+
+**All about lock files**
+- [Yarn lock: how it works](https://11sigma.com/blog/2021/09/03/yarn-lock-how-it-works-and-what-you-risk-without-maintaining-yarn-dependencies-deep-dive/)
+
+- [Lockfiles should be committed on all projects](https://classic.yarnpkg.com/blog/2016/11/24/lockfiles-for-all/)
