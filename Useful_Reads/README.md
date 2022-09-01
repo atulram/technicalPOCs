@@ -30,3 +30,8 @@ For postgres
 - [Yarn lock: how it works](https://11sigma.com/blog/2021/09/03/yarn-lock-how-it-works-and-what-you-risk-without-maintaining-yarn-dependencies-deep-dive/)
 
 - [Lockfiles should be committed on all projects](https://classic.yarnpkg.com/blog/2016/11/24/lockfiles-for-all/)
+
+**Understaning JWTs with proper secure implementaion**
+- [The Ultimate Guide to handling JWTs on frontend clients](https://hasura.io/blog/best-practices-of-using-jwt-with-graphql)
+- [How CSRF attack actually works](https://owasp.org/www-community/attacks/csrf)
+- [HTML5 Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html)
