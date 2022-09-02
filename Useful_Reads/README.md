@@ -32,13 +32,16 @@ For postgres
 - [Lockfiles should be committed on all projects](https://classic.yarnpkg.com/blog/2016/11/24/lockfiles-for-all/)
 
 **Understaning JWTs with proper secure implementaion**
-- [The Ultimate Guide to handling JWTs on frontend clients](https://hasura.io/blog/best-practices-of-using-jwt-with-graphql) Read: _Where do we save it then?_ section of this blog also get a complete idea
+- **[The Ultimate Guide to handling JWTs on frontend clients]**(https://hasura.io/blog/best-practices-of-using-jwt-with-graphql) Read: _Where do we save it then?_ section of this blog also get a complete idea
 - [Where should the JWT token stored in client side](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.md#token-storage-on-client-side)
 - [How CSRF attack actually works](https://owasp.org/www-community/attacks/csrf) Follow the References in this blog to understand other attacks
 - [How Cross Site Scripting (XSS) attack works](https://owasp.org/www-community/attacks/xss/)
 - [HTML5 Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html)
 - [Local Storage vs Session Storage vs Cookie](https://www.xenonstack.com/insights/local-vs-session-storage-vs-cookie)
 - [All about cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+- [Why Bearer before the token](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization#directives) Authorization: _type_ credentials
+This is because there are different authorization schemes
+- [Heavy debate on stackoverflow - Invalidating JSON Web Tokens](https://stackoverflow.com/questions/21978658/invalidating-json-web-tokens/52407314#52407314)
 
 **All about web secure practices**
 - [Golden cheatsheet of OWASP](https://github.com/OWASP/CheatSheetSeries/tree/master/cheatsheets)
