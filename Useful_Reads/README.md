@@ -42,6 +42,7 @@ For postgres
 - [Why Bearer before the token](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization#directives) Authorization: _type_ credentials
 This is because there are different authorization schemes
 - [Heavy debate on stackoverflow - Invalidating JSON Web Tokens](https://stackoverflow.com/questions/21978658/invalidating-json-web-tokens/52407314#52407314)
+- Also research on chained tokens
 
 **All about web secure practices**
 - [Golden cheatsheet of OWASP](https://github.com/OWASP/CheatSheetSeries/tree/master/cheatsheets)
