@@ -46,3 +46,7 @@ This is because there are different authorization schemes
 
 **All about web secure practices**
 - [Golden cheatsheet of OWASP](https://github.com/OWASP/CheatSheetSeries/tree/master/cheatsheets)
+
+**Kubernetes autentication and authorization**
+- [Authentication explained](https://www.weave.works/blog/kubernetes-authentication)
+- [Authorization explained RBAC](https://learnk8s.io/rbac-kubernetes)
