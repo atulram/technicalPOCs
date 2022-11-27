@@ -50,3 +50,8 @@ This is because there are different authorization schemes
 **Kubernetes autentication and authorization**
 - [Authentication explained](https://www.weave.works/blog/kubernetes-authentication)
 - [Authorization explained RBAC](https://learnk8s.io/rbac-kubernetes)
+
+**DNS**
+- [How dns works](https://www.namecheap.com/dns/what-is-dns-domain-name-system-definition/)
+- [how dns works with images](https://howdns.works/)
+- [Dns Propagation explained](https://www.namecheap.com/support/knowledgebase/article.aspx/9622/10/dns-propagation-explained)
