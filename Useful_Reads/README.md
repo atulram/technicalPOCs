@@ -53,5 +53,6 @@ This is because there are different authorization schemes
 
 **DNS**
 - [How dns works](https://www.namecheap.com/dns/what-is-dns-domain-name-system-definition/)
-- [how dns works with images](https://howdns.works/)
+- [How dns works with images](https://howdns.works/)
+- [Similar how dns works](https://phoenixnap.com/kb/what-is-domain-name-system-works)
 - [Dns Propagation explained](https://www.namecheap.com/support/knowledgebase/article.aspx/9622/10/dns-propagation-explained)
