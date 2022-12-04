@@ -56,3 +56,7 @@ This is because there are different authorization schemes
 - [How dns works with images](https://howdns.works/)
 - [Similar how dns works](https://phoenixnap.com/kb/what-is-domain-name-system-works)
 - [Dns Propagation explained](https://www.namecheap.com/support/knowledgebase/article.aspx/9622/10/dns-propagation-explained)
+- Run Your Own Authoritative DNS Servers
+    - [Prebaked scripts](https://www.joshmcguigan.com/blog/run-your-own-dns-servers/)
+    - [Setup in linux](https://opensource.com/article/17/4/build-your-own-name-server)
+    - [Digital ocean blog](https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-an-authoritative-only-dns-server-on-ubuntu-14-04)
