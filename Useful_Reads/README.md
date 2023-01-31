@@ -60,3 +60,7 @@ This is because there are different authorization schemes
     - [Prebaked scripts](https://www.joshmcguigan.com/blog/run-your-own-dns-servers/)
     - [Setup in linux](https://opensource.com/article/17/4/build-your-own-name-server)
     - [Digital ocean blog](https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-an-authoritative-only-dns-server-on-ubuntu-14-04)
+
+**Certs**
+
+- [Client Certs](https://medium.com/@sevcsik/authentication-using-https-client-certificates-3c9d270e8326)
