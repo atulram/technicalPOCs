@@ -68,3 +68,28 @@ Now if the client wants to fetch more info about the user, the scope for the acc
 The resource server need to verify the acces token against the authorization server. It can choose to validate the token by calling the tokeninfo endpoint of the authorization server like above or fetch the public key of the authorization server by calling the __JWKS Endpoint__
 
         curl --location --request GET 'https://www.googleapis.com/oauth2/v3/certs'
+
+
+
+**Oauth authorization_code PKCE grant flow**
+
+![](./auth_code_grant_pkce.PNG)
+
+This is a safer approach than plain Authorization code grant. It can be used when the client is running in a public network (like browser, android phone etc). Here a code_challenge is passed along with the get auth_code call (The get auth code call is happening from the client running in browser). The authorization server remembers this code_challenge. Now when the client makes the call to get the access_token, it needs to also send the code_verifier. The code_challenge is the encrypted then encoded version of code_verifier. The authz server then performs this operation to validate and then sends the acces token. The idea here is if the client id and client secret, auth_code and code_challenge is compromised since it is running in the browser, the hacker will still need to know the code_verifier to get the access token
+
+        curl --location --request GET 'https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=90hjfmq.apps.googleusercontent.com&scope=openid%20https://www.googleapis.com/auth/photoslibrary.readonly&state=state123&redirect_uri=http://localhost:80&prompt=consent&code_challenge=fkhlv2p3j0BoYN3bUDF0wx03bPKgt_xG_5xIYAvI&code_challenge_method=S256'
+
+
+        Get access_token call will include code_verifier
+
+        curl --location --request POST 'https://oauth2.googleapis.com/token' \
+        --header 'Content-Type: application/x-www-form-urlencoded' \
+        --data-urlencode 'grant_type=authorization_code' \
+        --data-urlencode 'client_id=901796891631-pv3c7ul7rf0lcuomelj615o1ufmqgkrq.apps.googleusercontent.com' \
+        --data-urlencode 'client_secret=GO98Uaj429' \
+        --data-urlencode 'redirect_uri=http://localhost:80' \
+        --data-urlencode 'auth_code=4/05klf9FjObwd7UvGatoYJvwJYfYLnrA' \
+        --data-urlencode 'code_verifier=AtulRam'
+
+
+We should always use pkce grant if possible even if the client is private
