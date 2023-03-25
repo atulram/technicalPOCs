@@ -65,11 +65,23 @@ Runnable r = new Dog(), then take alist of runnable objects -> dog class has imp
 
     - Another way to identify the violation of SRP is if the utility package has multiple functions which are unrelated. A better way is to segregate everything.  Have a utils folder inside the utils folder has different folders let one of the folders inside is a date,  then inside the date folder have multiple classes.  Each of these classes will be solely responsible for one thing.  This helps when in the future if you want to completely take out this component, then we will not have to worry about multiple places to look for
 
-Pros:
-- Reusability
-- Bloated code reduction, Readability
-- Testinng
+        Pros:
+        - Reusability
+        - Bloated code reduction, Readability
+        - Testinng
 
-Cons:
-- Lot of files
+        Cons:
+        - Lot of files
 
+- Open/Close: Any code unit should be open for extension but closed for modificaion when adding a new feature. (like a new class/function)
+
+    Solving the fly method of bird class, we can think of making a parent bird class and then each bird will inherit the bird class and implement a flyable interface to add its own implementation in the fly method, but that way if some birds have similar flying behavior we can't reuse the code. So a better way is to have an interface flyable implemented by each bird and a flying behavior interface implemented by a class that gives the implementation of the fly method and every bird must compose this class and call its fly method in its fly method. Favor composition over inheritance (has-a over is-a). Also if some birds can't fly they won't implement the flyable interface
+
+- Liskov's Substitution principle: Any variable of a parent class should be AS-IS substitutable by an instance of any child class without the client needing to do any code change
+
+    Bird b = new Parrot,  Any line below this should not need to worry if we replace Bird b = new Kiwi(). 
+
+    So this stops the developer from poorly implementing the kiwi fly metthod to through an error when called
+
+    Another thing that Liskovs substitution says is that child classes shouldn't give any special or other defination to the methods of parent class
+    (**Minimize surprises**)
