@@ -48,3 +48,28 @@ So unless there is a guarantee that all the sub-classes of the class will have a
 
 Runnable r = new Dog(), then take alist of runnable objects -> dog class has implemented runnable function
 
+**SOLID**
+- Single responsibility principle 
+
+    Every code unit should have only one well-defined responsibility.  A code unit can be a package, class, or a function
+
+    eg consider a  bird class
+
+    It can have attributes like species, type, color, etc.
+
+    - We can consider a method fly.  How a bird flies depends on the species of the bird.  An Eagle can fly high a sparrow can fly low and so on.  We can see that each type of bird will implement the fly function differently one way is to **have multiple if-else conditions** in the fly method based on the type of the bird.  This is wrong one indication of a violation of the single responsibility principle is,  multiple if else conditions
+    
+    - Another way to look at it is in **how many ways we will have to open the class**. One is when a new attribute or behavior needs to be added to a bird class,  and the second is when any of the birds change the way it flies.  We should definitely have the first one but the second one is not necessary
+
+    - Another way to identify the violation of SRP is if there is a Monster function.  It is a function that performs more tasks than the name suggests. eg.  Consider a log function it connects to a database, executes the query, and then logs the output.  A better way is to have a connect to database function and a create query function and then delegate please responsibilities to the respective functions. Basically, delegate the responsibility of a monster functions to other smaller functions.
+
+    - Another way to identify the violation of SRP is if the utility package has multiple functions which are unrelated. A better way is to segregate everything.  Have a utils folder inside the utils folder has different folders let one of the folders inside is a date,  then inside the date folder have multiple classes.  Each of these classes will be solely responsible for one thing.  This helps when in the future if you want to completely take out this component, then we will not have to worry about multiple places to look for
+
+Pros:
+- Reusability
+- Bloated code reduction, Readability
+- Testinng
+
+Cons:
+- Lot of files
+
