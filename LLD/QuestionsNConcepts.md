@@ -85,3 +85,29 @@ Runnable r = new Dog(), then take alist of runnable objects -> dog class has imp
 
     Another thing that Liskovs substitution says is that child classes shouldn't give any special or other defination to the methods of parent class
     (**Minimize surprises**)
+
+- Interface Segregation principle: Keep the interfaces as light as possible. Have very less numbers of methods in the interfaces. Interfaces should be for a specific purpose
+
+- Dependency inversion: No two concrete classes(any class that can be instantiated) should be directly connected to each other.  They should be connected via an interface
+
+    It promotes loose coupling
+
+    let's say flipkart client class depends on razorpay for payment, if flipkart class is directly using razorpay then if in future flipkart wants to move to payu then it will have to change its client. Rather the right way would be for the flipkart client to use an interface and there should be a adapter which implement that interface for razorpay, payu etc
+    
+    eg.
+
+    PaymentApi api = new RazorPayAdapter()
+    
+    PaymentApi api = new PayUAdapter()
+
+    and not RazorPay razorPay = new RazorPay()
+
+    But still we are creating a object of the Adapter in the flipkart class. Dpendency injection makes it more loosely coupled by making the Flipkart constructor accept the adapter
+
+    Payment api;
+    Flipkart(Payment api) {
+        this.api = api
+    }
+
+    code can run for different adapters, whatever the client wants
+    Inevrsion of control is another concept that tells that even the caller of the flipkart class need not pass the adapter object, the framework will handle it. 
