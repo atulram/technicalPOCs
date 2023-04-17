@@ -111,3 +111,28 @@ Runnable r = new Dog(), then take alist of runnable objects -> dog class has imp
 
     code can run for different adapters, whatever the client wants
     Inevrsion of control is another concept that tells that even the caller of the flipkart class need not pass the adapter object, the framework will handle it. 
+
+**Design Pattern**
+
+A well-established solution to common software design problems
+Three types of design patterns
+_creational_: how an object should be created.
+_structural_: what should be there in the object.
+_behavioral_: how an object should behave with others.
+
+**Creational Pattern**
+- When should an object be created
+- How should an object be creted, like using constructor or anything else
+- Where should the object be created, like in client code or anywhere else
+- How many objects should be created
+
+**Singleton** Design pattern only one instance of class ever
+
+we may want the object of a class when 
+
+- the same resource is being shared between multiple objects so only creating one object makes sense  like a logger object
+
+- when the object has no state then why even create multiple objects we can make use of one object  like the controller and the services object in MVC  framework
+
+- when creating an object is expensive like a database connection
+
