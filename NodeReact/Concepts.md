@@ -17,7 +17,9 @@
 
     To execute a package with npm you either have to type the local path, like this:
 
-    `$ ./node_modules/.bin/your-package` or you can run a locally installed package by adding it into your package.json file in the scripts section, like this:
+    `$ ./node_modules/.bin/your-package` 
+    
+    or you can run a locally installed package by adding it into your package.json file in the scripts section, like this:
 
     `{
     "name": "your-application",
@@ -26,7 +28,9 @@
         "your-package": "your-package"
      }
     }`
+
     Then you can run the script using npm run:
+    
     `npm run your-package`
 
     With npx
@@ -38,7 +42,9 @@
     npx will check whether _command_ or _package_ (node_modules .bin folder has commands scripts or binary packages) exists in $PATH, or in the local project binaries, and if so it will execute it.
 
     Another major advantage is the ability to execute a package that wasn’t previously installed
-
+    
+    `npx cowsay wow`
+    
     `npx create-react-app myproj`
 
     
