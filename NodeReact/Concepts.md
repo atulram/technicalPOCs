@@ -89,7 +89,7 @@ in the app.js import react and react-dom. Since we are importing in app.js it sh
 
     <script type='module' src="app.js"></script>
 
-__Pacrce Bundler__
+__Pacrcel Bundler__
 
 - Dev and Prod build
 - Local server
@@ -104,4 +104,17 @@ __Pacrce Bundler__
 - HTTPs
 - Diagnostics
 
-and a lot more, explore the [documentaion](https://parceljs.org/docs/) for more
+and a lot more, explore the [documentation](https://parceljs.org/docs/) for more
+
+bundlers like parcel plays a key role in making our react app faster, performant and optimized
+
+`npx parcel index.html` <--entrypoint
+
+`npx parcel build index.html` <-- for prod build, need to remove the main field from package.json
+
+We can add 
+
+    "browserslist": [
+       "last 2 versions"
+    ]
+ in the package.json and parcel build will take into account this list of browsers and our app will definately work on these browsers, explore [browserlist](https://github.com/browserslist/browserslist) for more
