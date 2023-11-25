@@ -62,3 +62,46 @@ __modules__
     - Modules always are in strict mode.
     - Loading the same module twice in the same file will have no effect, as modules are only executed once.
     - Modules require a server environment.
+
+**React** can be injected to our code by cdn links like below
+
+    <body>
+    <!-- top and bottom elements of root will not be replaced by react  --
+    
+    <div id="root"></div> <!-- anything inside root will be replaced by react  -->
+    
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="app.js"></script>
+    </body>
+
+This makes a network call to fetch the react scripts so not recommended
+
+Another way is to use react as a dependency in our project
+
+`npm i react`
+
+`npm i react-dom`
+
+in the app.js import react and react-dom. Since we are importing in app.js it should be decalred as module while sourcing in the html
+
+    <script type='module' src="app.js"></script>
+
+__Pacrce Bundler__
+
+- Dev and Prod build
+- Local server
+- HMR (hot module reloading)
+- File watch algo
+- Caching
+- Image Optimization
+- Minification
+- Code splitting
+- Differential bundling for browser support
+- Tree Shaking
+- HTTPs
+- Diagnostics
+
+and a lot more, explore the [documentaion](https://parceljs.org/docs/) for more
