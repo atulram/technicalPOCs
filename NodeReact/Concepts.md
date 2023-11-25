@@ -20,6 +20,10 @@ __npm__
 To execute a package with npm you either have to type the local path, like this:
 
 `$ ./node_modules/.bin/your-package` 
+
+like 
+
+.`\node_modules\.bin\parcel .\index.html`
     
 or you can run a locally installed package by adding it into your package.json file in the scripts section, like this:
 
@@ -48,6 +52,8 @@ Another major advantage is the ability to execute a package that wasn’t previo
 `npx cowsay wow`
 
 `npx create-react-app myproj`
+
+check more on npx in this [freecodecamp blog]((https://www.freecodecamp.org/news/npm-vs-npx-whats-the-difference/))
 
 __modules__
 
@@ -118,3 +124,27 @@ We can add
        "last 2 versions"
     ]
  in the package.json and parcel build will take into account this list of browsers and our app will definately work on these browsers, explore [browserlist](https://github.com/browserslist/browserslist) for more
+
+npm scripts convention
+
+    "scripts": {
+        "start": "parcel index.html",
+        "build": "parcel build index.html",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+
+    npm run start / npm start is for runnning in dev mode
+    npm run build is for prod build
+
+
+__React__
+
+    const heading = React.createElement('h1', {}, 'I am h1 tag')
+
+    const root = ReactDOM.createRoot(document.getElementById('root'))
+
+    root.render(heading)
+
+React.createElement returns => obj => render() makes this an HTML element
+
+render will replace everything in the root element and not append
