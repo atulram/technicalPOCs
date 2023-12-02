@@ -69,3 +69,41 @@ This is because there are different authorization schemes
 **Certs**
 
 - [Client Certs](https://medium.com/@sevcsik/authentication-using-https-client-certificates-3c9d270e8326)
+
+**Docker**
+- Making secure containers with reduced user privileges
+    - [Understanding linux user, read this completely](https://www.freecodecamp.org/news/how-to-manage-users-in-linux/#how-to-create-users)
+    - We need to change the user in the docker file before starting the main process (the entrypoint), so that it is run on behalf of the less privileged user
+    - Less privileged user can be created like below
+    
+        `RUN useradd --no-log-init --create-home --shell /bin/bash --uid "1000" --no-user-group "atul" `
+    - User can be changed by USER id command, all the below actions are then performed by this user
+        
+        `USER 1000`
+    - WORKDIR creates a directory by root user always, we might also want to change the user of this directory [check this](https://github.com/moby/moby/issues/36408)
+
+            WORKDIR /opt/app
+            RUN chown 1000:1000 $(pwd)
+            USER 1000
+    - We can copy folders and change the owner together
+            
+            COPY --chown="1000:1000" . .
+     - Debugging tricks [here](https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact) 
+
+            RUN [ "sh", "-c", "whoami"]
+            RUN [ "sh", "-c", "ls -al"]
+            RUN [ "sh", "-c", "cd .. && ls -al"]
+    - Example
+
+            FROM golang:1.21 as builder
+            ARG OTEL_VERSION=0.87.0
+            WORKDIR /
+            COPY . .
+            RUN go install go.opentelemetry.io/collector/cmd/builder@v${OTEL_VERSION}
+            RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 builder --config hv-otel/builder.yaml
+            RUN mkdir -p /oteldata
+            FROM scratch
+            COPY --from=builder /out/hv-otelcol /otel
+            COPY --from=builder --chown=10001:10001 /oteldata /oteldata
+            USER 10001
+            ENTRYPOINT ["/otel"]
