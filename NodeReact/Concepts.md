@@ -27,13 +27,13 @@ like
     
 or you can run a locally installed package by adding it into your package.json file in the scripts section, like this:
 
-`{
-    "name": "your-application",
-    "version": "1.0.0",
-    "scripts": {
-        "your-package": "your-package"
-     }
-}`
+    `{
+        "name": "your-application",
+        "version": "1.0.0",
+        "scripts": {
+            "your-package": "your-package"
+        }
+    }`
 
 Then you can run the script using npm run:
     
@@ -53,7 +53,7 @@ Another major advantage is the ability to execute a package that wasn’t previo
 
 `npx create-react-app myproj`
 
-check more on npx in this [freecodecamp blog]((https://www.freecodecamp.org/news/npm-vs-npx-whats-the-difference/))
+check more on npx in this [freecodecamp blog](https://www.freecodecamp.org/news/npm-vs-npx-whats-the-difference/)
 
 __modules__
 
@@ -137,9 +137,13 @@ npm scripts convention
     npm run build is for prod build
 
 
+crossorigin tag 
+
+Normal script elements pass minimal information to the window.onerror for scripts which do not pass the standard CORS checks. To allow error logging for sites which use a separate domain for static media, use this attribute. See CORS settings attributes for a more descriptive explanation of its valid arguments.
+
 __React__
 
-    const heading = React.createElement('h1', {}, 'I am h1 tag')
+    const heading = React.createElement('h1', {"id": "headr", "a": "b"}, 'I am h1 tag')
 
     const root = ReactDOM.createRoot(document.getElementById('root'))
 
@@ -147,4 +151,11 @@ __React__
 
 React.createElement returns => obj => render() makes this an HTML element
 
+Object
+![Alt text](image.png)
+
+HTML element
+![Alt text](image-1.png)
+
 render will replace everything in the root element and not append
+
