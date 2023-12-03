@@ -151,6 +151,8 @@ __React__
 
 React.createElement returns => obj => render() makes this an HTML element
 
+createElement can take another reactElement as children
+
 Object
 ![Alt text](image.png)
 
@@ -159,3 +161,106 @@ HTML element
 
 render will replace everything in the root element and not append
 
+__jsx__
+
+`const heading = <h1 id="headr">I am h1 tag from jsx</h1>`
+
+This is not a valid js code. Browser will complain  `Unexpected token '<'`
+
+But this html like syntax makes the coding easy for complex elements. This is called jsx and it returns the exact same reactElement that react.createElement() returns
+
+![Alt text](image-2.png)
+But how does the browser understand jsx? 
+
+It does because our code is transpiled to javascript before sending it to the browser. Bundler like Parcel does it with the help of Babel transpiler [check this out](https://babeljs.io/docs/#jsx-and-react)
+
+[Read this article on creating an app with JSX only and not react](https://devsmitra.medium.com/react-how-to-create-the-app-using-jsx-without-react-cf5f0156568)
+
+    JSX
+
+    <div>
+    <img src="myimg.jpg" alt="no img found" width="500" height="600"/>
+
+    <a href="https://www.example.com">example</a>
+    </div>
+
+Transpiled to 
+
+![Alt text](image-3.png)
+
+Adjacent JSX elements must be wrapped in an enclosing tag also remember the camelCase of attributes
+
+__Component__
+
+Fuctional compoment: It is a normal javascript function that returns reactElement or in other words return JSX (because JSX gets transpiled to reactElement eventually). Function name indicating a component starts with capital letter
+
+    const HeaderComponent = () => {
+        return <h1 id="header">
+                I am h1 tag from jsx
+                <div>
+                    This is div
+                </div>
+        </h1>
+    }
+
+    /* The jsx should start from same line as the retun keyword if not wrap it up in brackets () like below */
+
+    const HeaderComponent = () => {
+        return (
+            <h1 id="header">
+                    I am h1 tag from jsx
+                    <div>
+                        This is div
+                    </div>
+            </h1>
+        )
+    }
+
+Use lowercase tags <lowercase/> when you need a DOM elements, and Capitalized tags <Capitalized/> for component elements.
+
+Checkout the jsx syntax rules [here](https://medium.com/nerd-for-tech/jsx-rules-in-react-a-javascript-framework-4b0ab66fdbf9)
+
+
+Rendering can happen in all the 3 ways below
+    
+    root.render(<HeaderComponent/>)
+    root.render(React.createElement(HeaderComponent, {}, null))
+    root.render(HeaderComponent())
+    
+    /* 1st gets transpilled to 2nd
+    since ReactComponents are functions so 3rd one also works */
+
+__Component Composition__
+
+        const Title = () => <div id="header">
+            This is the title
+        </div>
+
+        const HeaderComponent = () => {
+            return (
+                <h1 id="header">
+                        <Title/>
+                        I am h1 tag from jsx
+                        <div>
+                            This is div
+                        </div>
+                </h1>
+            )
+        }
+
+In JSX we write javascript inside curly braces {}
+
+        <h1 id="header"> 
+                {title} # another reactElement or JSX
+                {console.log("Hi")}
+                {HeaderComponent()} # We can call functional component
+                
+                <HeaderComponent/> # renders the JSX returned from HeaderComponent, JSX understand component rendering so no need of {}
+
+                <HeaderComponent></HeaderComponent>
+                <Title/>
+                I am h1 tag from jsx
+                <div>
+                    This is div
+                </div>
+        </h1>
