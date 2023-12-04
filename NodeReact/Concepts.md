@@ -192,7 +192,7 @@ Adjacent JSX elements must be wrapped in an enclosing tag also remember the came
 
 __Component__
 
-Fuctional compoment: It is a normal javascript function that returns reactElement or in other words return JSX (because JSX gets transpiled to reactElement eventually). Function name indicating a component starts with capital letter
+Fuctional component: It is a normal javascript function that returns reactElement or in other words return JSX (because JSX gets transpiled to reactElement eventually). Function name indicating a component starts with capital letter
 
     const HeaderComponent = () => {
         return <h1 id="header">
