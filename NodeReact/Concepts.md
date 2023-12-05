@@ -299,3 +299,11 @@ Read this article on [special props](https://react.dev/warnings/special-props)
 Since react uses key to identify the element uniquely and optimize its render cycle we shoulld always pass key to the component in array
 
 Also index as key is an anti pattern see the articles [here](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/) and [here](https://stackoverflow.com/questions/42773892/wrong-components-rendered-by-preact)
+
+__Floder Structure__
+
+Convention src > components > one_file_per_component
+Read these articles to know the common approaches
+[artcicle 1](https://blog.webdevsimplified.com/2022-07/react-folder-structure/),  [article2](https://legacy.reactjs.org/docs/faq-structure.html)
+
+Create a basic structure and as the app grows keep restructuring it
