@@ -254,8 +254,9 @@ In JSX we write javascript inside curly braces {}
                 {title} # another reactElement or JSX
                 {console.log("Hi")}
                 {HeaderComponent()} # We can call functional component
-                
                 <HeaderComponent/> # renders the JSX returned from HeaderComponent, JSX understand component rendering so no need of {}
+
+                {<HeaderComponent/>} JSX treats this like above, it means we can put JSX inside {}, if we have multiple components to render we need to wrap it up in a parent div
 
                 <HeaderComponent></HeaderComponent>
                 <Title/>
@@ -264,3 +265,37 @@ In JSX we write javascript inside curly braces {}
                     This is div
                 </div>
         </h1>
+
+For inline css the style attribute expects a js object
+
+![Alt text](image-4.png)
+
+JSX by default protects from most of the XSS attacks as it sanitizes the javascript that we giveiin the curly braces
+[read this](https://stackoverflow.com/questions/33644499/what-does-it-mean-when-they-say-react-is-xss-protected)
+
+![Alt text](image-5.png)
+
+jsx converts the `<Card name="xyz">` to `React.createElement(Card, {name: 'xyz'})` and then react unerstands its Component as it starts wit capital letter and passes the 2nd and the 3rd paraments as arguements while calling the Card function, these are called props
+
+[Check about config driven UI pattern, a industrial standard](https://www.arahansen.com/react-design-patterns-generating-user-configured-ui-using-the-visitor-pattern/)
+
+Rendering an array of Components
+
+    <div id="greet" style={{a:5}}>
+        { [<Card id="1" />,<Card id="2" />, <Card id="3" />] }
+    </div>
+
+    // This can also be done like below
+
+    <div id="greet" style={{a:5}}>
+        { [1,2,3].map(item => <Card key={item} id={item} />) }
+    </div>
+
+ker and ref are special props and are not forwarded as props
+![Alt text](image-6.png)
+
+Read this article on [special props](https://react.dev/warnings/special-props)
+
+Since react uses key to identify the element uniquely and optimize its render cycle we shoulld always pass key to the component in array
+
+Also index as key is an anti pattern see the articles [here](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/) and [here](https://stackoverflow.com/questions/42773892/wrong-components-rendered-by-preact)
