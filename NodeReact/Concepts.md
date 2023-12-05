@@ -306,4 +306,19 @@ Convention src > components > one_file_per_component
 Read these articles to know the common approaches
 [artcicle 1](https://blog.webdevsimplified.com/2022-07/react-folder-structure/),  [article2](https://legacy.reactjs.org/docs/faq-structure.html)
 
+Generally name the File same as the component
+
 Create a basic structure and as the app grows keep restructuring it
+
+Named exports
+![Alt text](image-7.png)
+
+`import { sum, difference, product, quotient } from './functions.js'`
+
+Default exports
+
+`export default function sum(x, y) {
+  return x + y
+}`
+
+`import anyName from './functions.js'`
