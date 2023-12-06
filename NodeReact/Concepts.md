@@ -334,3 +334,8 @@ Hooks are normal utilitu functions that react provides
 When normal variable update re-rendering of component doesn't happen but when a state variable is updated react re-renders the component
 
 React Keeps in sync the data layer(state vars) with the UI layer (what is displayed in UI)
+
+React keeps track of the actual dom by creating a representaion of it as js obj called virtual dom
+Whenever rendering process starts it checks the current Vdom and previous Vdom finds out the difference using diff algo(react fiber in react 16 onwards) and then manipulates the DOM applying this difference. Vdom concept existed prior to react but react's diff algo is faster so react is faster
+
+[Read this importand and interesting article on react fiber](https://github.com/acdlite/react-fiber-architecture)
