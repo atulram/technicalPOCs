@@ -322,3 +322,15 @@ Default exports
 }`
 
 `import anyName from './functions.js'`
+
+__Hooks__
+
+Hooks are normal utilitu functions that react provides
+
+    import { useState } from "react"
+    const [variable, setVariable] = useState(0)
+    setVariable(15)
+
+When normal variable update re-rendering of component doesn't happen but when a state variable is updated react re-renders the component
+
+React Keeps in sync the data layer(state vars) with the UI layer (what is displayed in UI)
