@@ -336,6 +336,30 @@ When normal variable update re-rendering of component doesn't happen but when a 
 React Keeps in sync the data layer(state vars) with the UI layer (what is displayed in UI)
 
 React keeps track of the actual dom by creating a representaion of it as js obj called virtual dom
-Whenever rendering process starts it checks the current Vdom and previous Vdom finds out the difference using diff algo(react fiber in react 16 onwards) and then manipulates the DOM applying this difference. Vdom concept existed prior to react but react's diff algo is faster so react is faster
+Whenever rendering process starts it checks the current Vdom and previous Vdom finds out the difference using diff algo(react fiber in react 16 onwards) and then manipulates the DOM applying this difference only. __Vdom concept existed prior to react but react's diff algo is faster so react is faster__
 
 [Read this importand and interesting article on react fiber](https://github.com/acdlite/react-fiber-architecture)
+
+useEffect(callback, dependency), it gets called after the component is rendered. We make api calls onside this and then generally setState for re-render. Generally we load a shimmer UI until data is fetched, then conditionally render component
+
+![Alt text](image-8.png)
+
+![Alt text](image-9.png)
+
+Every time reacts renders a componnet, it means __calling the component function again__ with useState providing the changed value
+
+In the below search example I have not tied the value of the input box to a state variable instead I am populating a normal variable everytime onChange event is fired in typing
+![Alt text](image-10.png)
+Fisrt time when I type `y` and then search we get the searchedText as `y` 
+![Alt text](image-11.png)
+
+
+![Alt text](image-12.png)
+When I press the search button again the searchedText is empty eventhough the input box shows `y`, this is because the Component function was called again and only state variables got new value from the useState hook and other normal variables got assigned the initial value. This means we need to use a state variable to keep the searchedText and so as we type every time the component will get rendered
+
+![Alt text](image-13.png)
+
+Proper code below
+![Alt text](image-14.png)
+
+Remember every key press renders / calls the Search Component 
