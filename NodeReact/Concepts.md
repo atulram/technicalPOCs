@@ -363,3 +363,47 @@ Proper code below
 ![Alt text](image-14.png)
 
 Remember every key press renders / calls the Search Component 
+
+__Event handling__
+
+To react to an event, you attach an event handler to it. This is a block of code (usually a JavaScript function that you as a programmer create) that runs when the event fires. When such a block of code is defined to run in response to an event, we say we are registering an event handler. Note: Event handlers are sometimes called event listeners — they are pretty much interchangeable for our purposes, although strictly speaking, they work together. The listener listens out for the event happening, and the handler is the code that is run in response to it happening. Read more [here](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#syntax)
+
+    const btn = document.querySelector("button");
+
+    function random(number) {
+        return Math.floor(Math.random() * (number + 1));
+    }
+    function changeBackground() {
+        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        document.body.style.backgroundColor = rndCol;
+    }
+    btn.addEventListener("click", changeBackground);
+
+    // Another example
+
+    const controller = new AbortController();
+    const el = document.getElementById("outside");
+    el.addEventListener("click", modifyText, { signal: controller.signal });
+
+    function modifyText() {...}
+
+In __HTML__ its 
+
+    <input type="text" onblur="myFunction()">
+Note the function is called instead of passing a reference. Also note the `on` prefix
+
+In __JSX__
+
+    const Title = () => {
+    return (
+            <>
+                <div id="header" onMouseOver={handler}>
+                    This is the title 1
+                </div>
+                <div id="header">
+                    This is the title 2
+                </div>
+            </>
+        )
+    }
+Note function reference is passed. Also note the cameCase for event types
