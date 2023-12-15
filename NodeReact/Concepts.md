@@ -375,6 +375,8 @@ When I press the search button again the searchedText is empty eventhough the in
 Proper code below
 ![Alt text](image-14.png)
 
+if we tie the value attribute of input field to state variable, it becomes a _2 way binding_ and resetting the input box becomes easy as we only need to empty the state variable. This is true for all form elements
+
 Remember every key press renders / calls the Search Component 
 
 __Event handling__
