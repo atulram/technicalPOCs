@@ -325,11 +325,24 @@ Default exports
 
 __Hooks__
 
-Hooks are normal utilitu functions that react provides
+Hooks are normal utility functions that react provides
 
     import { useState } from "react"
     const [variable, setVariable] = useState(0)
     setVariable(15)
+
+    
+    If the new state is computed using the previous state, you can pass a function to setState. The function will receive the previous value, and return an updated value
+
+    <button onClick={() => setCount(initialCount)}>Reset</button>
+
+    <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
+    <button onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
+
+    setState(prevState => {
+        // Object.assign would also work
+        return {...prevState, key: updatedValue};
+    })
 
 When normal variable update re-rendering of component doesn't happen but when a state variable is updated react re-renders the component
 
