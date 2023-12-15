@@ -332,7 +332,7 @@ Hooks are normal utility functions that react provides
     setVariable(15)
 
     
-    If the new state is computed using the previous state, you can pass a function to setState. The function will receive the previous value, and return an updated value
+If the new state is computed using the previous state, you can pass a function to setState. The function will receive the previous value, and return an updated value. [check this](https://legacy.reactjs.org/docs/hooks-reference.html#functional-updates)
 
     <button onClick={() => setCount(initialCount)}>Reset</button>
 
