@@ -31,6 +31,9 @@ For postgres
 
 - [Tunneling using cloudflare](https://www.youtube.com/watch?v=BnWfbv7Fy-k)
 
+**Build your own cloud**
+- [Filecloud](https://www.youtube.com/watch?v=xBIowQ0WaR8)
+
 **All about lock files**
 - [Yarn lock: how it works](https://11sigma.com/blog/2021/09/03/yarn-lock-how-it-works-and-what-you-risk-without-maintaining-yarn-dependencies-deep-dive/)
 
