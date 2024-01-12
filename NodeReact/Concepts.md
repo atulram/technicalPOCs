@@ -467,6 +467,7 @@ Use below cookies to protect your website
 - httpOnly: true - js wont be able to access
 - secure: true - cookies will only be sent in https calls
 - sameSite: 'strict' (https://web.dev/articles/samesite-cookies-explained)
+- also explore withCredentials in axios
 
 
 
