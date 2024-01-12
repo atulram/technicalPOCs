@@ -422,3 +422,53 @@ In __JSX__
         )
     }
 Note function reference is passed. Also note the cameCase for event types
+
+
+
+
+
+
+**Security**
+
+**Iframe Security**
+A malicious iframe can steal data like below
+
+iframe code
+
+    
+    window.onload = function() {
+        parentWindow = window.parent
+        stolendata1 = parentDoc.cookie
+        parentDoc = parentWindow.document
+        stolendata2 = parentDoc.innerHtml
+    }
+But when we include this malicious iframe in our website the modern browsers will detect that iframe is trying to access the parent window. Will show _blocked cross-origin access_
+
+To prevet your website to be embedded as an iframe use 
+headers like: 
+- X-Frame-Options: SAMEORIGIN
+- Cross-Origin-Opener-Policy to allow acces to same origin
+- `Content-Security-Policy: frame-ancestors <source>;`
+- `Content-Security-Policy: frame-ancestors <space separated list of sources>;`
+- `Content-Security-Policy: sandbox;` 
+- `Content-Security-Policy: sandbox <value>;`
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox
+- [explore in detail](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors)
+
+Securing your website from parent. Put below code so that parent website cant steal from your site when it is iframed
+    
+    if(window.top != window.self) {
+        window.top.location = window.self.location
+    }
+
+https://stackoverflow.com/questions/3473946/what-is-the-difference-between-window-window-top-and-window-parent
+
+Use below cookies to protect your website
+- httpOnly: true - js wont be able to access
+- secure: true - cookies will only be sent in https calls
+- sameSite: 'strict' (https://web.dev/articles/samesite-cookies-explained)
+
+
+
+Communication to the iframe https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
+
