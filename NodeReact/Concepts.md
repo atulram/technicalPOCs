@@ -361,18 +361,26 @@ useEffect(callback, dependency), it gets called after the component is rendered.
 
 Every time reacts renders a componnet, it means __calling the component function again__ with useState providing the changed value
 
+__Understanding 2 way Binding__
+
 In the below search example I have not tied the value of the input box to a state variable instead I am populating a normal variable everytime onChange event is fired in typing
+
+![Alt text](image-13.png)
+
 ![Alt text](image-10.png)
+
 Fisrt time when I type `y` and then search we get the searchedText as `y` 
+
 ![Alt text](image-11.png)
 
 
 ![Alt text](image-12.png)
+
 When I press the search button again the searchedText is empty eventhough the input box shows `y`, this is because the Component function was called again and only state variables got new value from the useState hook and other normal variables got assigned the initial value. This means we need to use a state variable to keep the searchedText and so as we type every time the component will get rendered
 
-![Alt text](image-13.png)
 
 Proper code below
+
 ![Alt text](image-14.png)
 
 if we tie the value attribute of input field to state variable, it becomes a _2 way binding_ and resetting the input box becomes easy as we only need to empty the state variable. This is true for all form elements
